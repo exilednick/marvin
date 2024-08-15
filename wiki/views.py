@@ -69,7 +69,7 @@ def get_search_history(request):
 
     data = {
         'page': page_number,
-        'total_pages': totalHistoryCount//limit,
+        'total_pages': min(1, totalHistoryCount//limit),
         'results': serializer.data
     }
 
